@@ -84,11 +84,11 @@ module Buckaroo
     end
 
     def status
-      raw['BRQ_STATUSCODE'].to_i
+      raw['brq_statuscode'].to_i
     end
 
     def redirect_url
-      raw['BRQ_REDIRECTURL']
+      raw['brq_redirecturl']
     end
 
     def pending_input?
@@ -100,11 +100,11 @@ module Buckaroo
     end
 
     def invoice_number
-      raw['BRQ_INVOICENUMBER']
+      raw['brq_invoicenumber']
     end
 
     def amount
-      raw['BRQ_AMOUNT']
+      raw['brq_amount']
     end
 
     def awaiting_consumer?
@@ -120,7 +120,7 @@ module Buckaroo
     end
 
     def transaction
-      raw['BRQ_TRANSACTIONS']
+      raw['brq_transactions']
     end
   end
 
