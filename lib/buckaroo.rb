@@ -67,6 +67,16 @@ module Buckaroo
       TransactionRequestResponse.new Buckaroo.execute!(request, 'transactionrequest')
     end
 
+    def request_refund_info!(hash)
+
+      throw 'Transaction ID should be set' unless hash[:transaction_id]
+
+      request = {}
+      request['brq_transaction'] = hash[:transaction_id]
+
+      TransactionRequestResponse.new Buckaroo.execute!(request, 'refundinfo')
+    end
+
     def gateway
       return "https://testcheckout.buckaroo.nl/nvp/" if test?
       "https://checkout.buckaroo.nl/nvp/"
