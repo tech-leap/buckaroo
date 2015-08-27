@@ -52,7 +52,7 @@ module Buckaroo
       request = {}
 
       request['brq_currency'] = 'EUR'
-      request['brq_requestedservices'] = 'ideal,transfer'
+      request['brq_requestedservices'] = 'visa,mastercard'
       request['brq_culture'] = 'nl-NL'
       request['brq_continue_on_incomplete'] = 'RedirectToHTML'
 
