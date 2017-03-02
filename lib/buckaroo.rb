@@ -171,5 +171,11 @@ module Buckaroo
 
       Digest::SHA1.hexdigest vars
     end
+
+    def self.get_signature(hash, secret_key)
+      calc_hash = hash.dup()
+      calc_hash.delete('brq_signature')
+      Hasher.calculate(calc_hash, secret_key)
+    end
   end
 end
