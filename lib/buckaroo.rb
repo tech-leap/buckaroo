@@ -173,9 +173,10 @@ module Buckaroo
     end
 
     def self.get_signature(hash, secret_key)
-      name, signature = hash.find {|x,y| x.downcase == "brq_signature" }
-      signature = hash.delete name
-      Hasher.calculate(hash, secret_key)
+      dup_hash = hash.dup
+      name, signature = dup_hash.find {|x,y| x.downcase == "brq_signature" }
+      signature = dup_hash.delete name
+      Hasher.calculate(dup_hash, secret_key)
     end
   end
 end
