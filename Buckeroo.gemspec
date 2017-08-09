@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'poltergeist'
-  s.add_dependency 'rest-client'
+  s.add_dependency 'rest-client', '~> 1.8'
 end
