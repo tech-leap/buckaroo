@@ -166,7 +166,7 @@ module Buckaroo
       # 4. calculate RSA1
 
       x = hash.sort_by {|k, _| k.downcase.to_s }
-      vars = x.collect{|k,v| "#{k}=#{CGI.unescape(v)}" }.join
+      vars = x.collect{|k,v| "#{k}=#{v}" }.join
       vars << secret_key
 
       Digest::SHA1.hexdigest vars
