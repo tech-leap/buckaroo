@@ -51,7 +51,7 @@ module Buckaroo
 
       request = {}
 
-      request['brq_currency'] = hash[:currency]
+      request['brq_currency'] = hash[:currency] || 'EUR'
       request['brq_requestedservices'] = (hash[:requestedservices] || 'ideal,transfer')
       request['brq_culture'] = 'en-US'
       request['brq_continue_on_incomplete'] = 'RedirectToHTML'
